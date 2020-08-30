@@ -28,9 +28,17 @@ sensor.readRawData()
 # Convert data from internal buffer to human readable format
 temperature = sensor.convertTemperature()
 humidity = sensor.convertHumidity()
+'''
 
+Reading property `values` combines all above:
 
-# Reading property .values does all above combined
+```python
+from machine import I2C
+import aht10.py
+
+i2c = I2C(0, sda=21, scl=22)
+sensor = aht10.AHT10(i2c=i2c)
+
 humidity, temperature = sensor.values
 ```
 

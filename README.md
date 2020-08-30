@@ -26,6 +26,7 @@ time.sleep_ms(100)
 sensor.readRawData()
 
 # Convert data from internal buffer to human readable format
+# returns float
 temperature = sensor.convertTemperature()
 humidity = sensor.convertHumidity()
 ```
@@ -39,6 +40,7 @@ import aht10.py
 i2c = I2C(0, sda=21, scl=22)
 sensor = aht10.AHT10(i2c=i2c)
 
+# returns str
 humidity, temperature = sensor.values
 ```
 

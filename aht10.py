@@ -48,24 +48,24 @@ class AHT10:
         temp = self.convertTemperature()
         return [hum, temp]
 
-    def status_calibrated(self):
+    def statusCalibrated(self):
         status = self.readStatus()
-        return self.bit_is_set(status,3)
+        return self.bitIsSet(status,3)
 
-    def status_busy(self):
+    def statusBusy(self):
         status = self.readStatus()
-        return self.bit_is_set(status,7)
+        return self.bitIsSet(status,7)
 
-    def status_mode(self):
+    def statusMode(self):
         status = self.readStatus()
-        if (self.bit_is_set(status,6)):
+        if (self.bitIsSet(status,6)):
             return 'CMD'
         elif (self.bit_is_set(status,5)):
             return 'CYC'
         else:
             return 'NOR'
 
-    def bit_is_set(self, byte, bit):
+    def bitIsSet(self, byte, bit):
         if (byte & (1<<bit) == 0 ):
             return False
         else:

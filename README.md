@@ -28,7 +28,7 @@ sensor.readRawData()
 # Convert data from internal buffer to human readable format
 temperature = sensor.convertTemperature()
 humidity = sensor.convertHumidity()
-'''
+```
 
 Reading property `values` combines all above:
 

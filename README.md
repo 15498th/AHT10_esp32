@@ -5,6 +5,7 @@ Heavily based on [https://github.com/Thinary/AHT10](https://github.com/Thinary/A
 ## Usage
 
 ```python
+import time
 from machine import I2C
 import aht10.py
 

@@ -13,7 +13,7 @@ class AHT10:
             raise ValueError('An I2C object is required.')
         self.i2c = i2c
         self.address = address
-        i2c.writeto(self.address, ResetCmd)
+        self.reset()
         self.raw_data = bytearray(6)
 
     def readStatus(self, from_buffer=False):
@@ -25,6 +25,12 @@ class AHT10:
 
     def initiateMeasurement(self):
         self.i2c.writeto(self.address, MeasureCmd)
+
+    def reset(self):
+        self.i2c.writeto(self.address, ResetCmd)
+
+    def calibrate(self):
+        self.i2c.writeto(self.address, CalibrateCmd)
 
     def readRawData(self):
         self.raw_data = self.i2c.readfrom(self.address, 6)

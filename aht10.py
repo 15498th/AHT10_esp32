@@ -60,7 +60,7 @@ class AHT10:
         status = self.readStatus()
         if (self.bitIsSet(status,6)):
             return 'CMD'
-        elif (self.bit_is_set(status,5)):
+        elif (self.bitIsSet(status,5)):
             return 'CYC'
         else:
             return 'NOR'

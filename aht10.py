@@ -26,9 +26,6 @@ class AHT10:
     def initiateMeasurement(self):
         self.i2c.writeto(self.address, MeasureCmd)
 
-    def initiateNormalMode(self):
-        self.i2c.writeto(self.address, NormalCmd)
-
     def readRawData(self):
         self.raw_data = self.i2c.readfrom(self.address, 6)
 

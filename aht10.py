@@ -51,16 +51,16 @@ class AHT10:
         temp = self.convertTemperature()
         return [hum, temp]
 
-    def statusCalibrated(self):
-        status = self.readStatus()
+    def statusCalibrated(self, from_buffer=False):
+        status = self.readStatus(from_buffer)
         return self.bitIsSet(status,3)
 
-    def statusBusy(self):
-        status = self.readStatus()
+    def statusBusy(self, from_buffer=False):
+        status = self.readStatus(from_buffer)
         return self.bitIsSet(status,7)
 
-    def statusMode(self):
-        status = self.readStatus()
+    def statusMode(self, from_buffer=False):
+        status = self.readStatus(from_buffer)
         if (self.bitIsSet(status,6)):
             return 'CMD'
         elif (self.bitIsSet(status,5)):

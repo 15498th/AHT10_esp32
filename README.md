@@ -15,7 +15,7 @@ from machine import I2C
 import aht10.py
 
 # Create i2c bus object, pins here are hardware i2c pins for ESP32
-i2c = I2C(0, sda=21, scl=22)
+i2c = I2C(0, sda=Pin(21), scl=Pin(22))
 
 # Create sensor object. Default address argument is 56 and can be ommited
 sensor = aht10.AHT10(i2c=i2c, address=56)
@@ -41,7 +41,7 @@ Reading property `values` combines all above:
 from machine import I2C
 import aht10.py
 
-i2c = I2C(0, sda=21, scl=22)
+i2c = I2C(0, sda=Pin(21), scl=Pin(22))
 sensor = aht10.AHT10(i2c=i2c)
 
 # returns str

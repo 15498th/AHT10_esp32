@@ -5,7 +5,7 @@ Heavily based on [https://github.com/Thinary/AHT10](https://github.com/Thinary/A
 
 ## Usage
 
-Measurement is triggered by calling `initiateMeasurement()`. It takes some time to complete the measurement, so data shouldn't be read from sensor memory before they are updated, otherwise it could be left in inconsistent state or contain values from previous reading. See status evaluation section below.
+Measurement is triggered by calling `initiateMeasurement()`. It takes some time to complete the measurement, so data shouldn't be read from sensor memory before it is updated, otherwise it could be left in inconsistent state or contain values from previous reading. See status evaluation section below.
 The sensor memory consists of 6 bytes. First byte is used for status bits and others are devided between temperature and humidity values. Sensor memory is read to internal buffer with `readRawData()` method and then converted to actual temperature and humidity values with `convertTemperature()` and `convertHumidity()` methods. 
 
 
